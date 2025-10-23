@@ -23,7 +23,22 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
 
-    <div class="bg-white w-full max-w-md p-6 md:p-8 rounded-2xl shadow-xl space-y-6">
+    <!-- 
+      NEU: HTML-Splash-Screen 
+      Dieser überlagert die App, bis sie geladen ist.
+      Er hat dieselbe Hintergrundfarbe (bg-gray-100) wie der native Splash Screen.
+    -->
+    <div id="app-splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-100 transition-opacity duration-500 ease-out">
+        <!-- Wir verwenden dein Icon und lassen es pulsieren -->
+        <img src="icon-192.png" alt="Logo wird geladen" class="w-24 h-24 animate-pulse">
+        <p class="mt-4 text-lg font-medium text-indigo-700">Berechne Zeit...</p>
+    </div>
+
+    <!-- 
+      NEU: Haupt-App-Inhalt 
+      Jetzt in einem Wrapper-Div mit ID und standardmäßig unsichtbar (opacity-0).
+    -->
+    <div id="app-content" class="bg-white w-full max-w-md p-6 md:p-8 rounded-2xl shadow-xl space-y-6 opacity-0 transition-opacity duration-500 ease-in">
         
         <h1 class="text-3xl font-bold text-center text-indigo-800">Arbeitszeit Rechner</h1>
 

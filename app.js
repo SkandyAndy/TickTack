@@ -11,6 +11,10 @@ const progressBarEl = document.getElementById('progressBar');
 const progressTextEl = document.getElementById('progressText');
 const statusMessageEl = document.getElementById('statusMessage');
 
+// NEU: DOM-Elemente für den Splash Screen
+const splashScreenEl = document.getElementById('app-splash-screen');
+const appContentEl = document.getElementById('app-content');
+
 // --- App-Initialisierung ---
 document.addEventListener('DOMContentLoaded', () => {
     loadSettings();
@@ -29,7 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(calculateTime, 10000);
     
     // Service Worker für PWA-Funktionalität registrieren
-    registerServiceWorker(); // <-- Jetzt wieder aktiviert
+    registerServiceWorker();
+
+    // NEU: Splash Screen ausblenden und App einblenden
+    // Wir geben ihm eine kleine Verzögerung, damit es flüssiger aussieht
+    setTimeout(() => {
+        if (splashScreenEl) {
+            // Splash Screen ausblenden
+            splashScreenEl.classList.add('opacity-0');
+            // Verstecke es komplett nach der Animation
+            splashScreenEl.addEventListener('transitionend', () => {
+                splashScreenEl.classList.add('hidden');
+            });
+        }
+        if (appContentEl) {
+            // App-Inhalt einblenden
+            appContentEl.classList.remove('opacity-0');
+            appContentEl.classList.add('opacity-100');
+        }
+    }, 300); // 300ms Verzögerung
 });
 
 // --- Einstellungs-Management ---
