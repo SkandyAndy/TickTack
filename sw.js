@@ -1,5 +1,5 @@
 // Name des Caches. Ändere dies, um den Cache bei Updates zu erneuern.
-const CACHE_NAME = 'work-time-calculator-v1.0';
+const CACHE_NAME = 'work-time-calculator-v1.1';
 
 // Dateien, die beim Installieren gecached werden sollen.
 const ASSETS_TO_CACHE = [
