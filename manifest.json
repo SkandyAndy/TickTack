@@ -1,0 +1,22 @@
+{
+  "name": "Arbeitszeit Rechner",
+  "short_name": "TickTack",
+    "start_url": "/TickTack/",
+    "scope": "/TickTack/",
+  "display": "standalone",
+  "background_color": "#f3f4f6",
+  "theme_color": "#4338ca",
+  "description": "Ein einfacher Zeitrechner für die Arbeit.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

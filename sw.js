@@ -4,14 +4,14 @@ const CACHE_NAME = 'work-time-calculator-v1.0';
 // Dateien, die beim Installieren gecached werden sollen.
 const ASSETS_TO_CACHE = [
     './',
-    'index.html',
-    'style.css',
-    'app.js',
-    'manifest.json',
-    'https://cdn.tailwindcss.com',
-    'https://placehold.co/180x180/4338ca/ffffff?text=Zeit&font=inter',
-    'https://placehold.co/192x192/4338ca/ffffff%3Ftext%3DZeit%26font%3Dinter',
-    'https://placehold.co/512x512/4338ca/ffffff%3Ftext%3DZeit%26font%3Dinter'
+    './index.html',
+    './style.css',
+    './app.js',
+    './manifest.json',
+    './https://cdn.tailwindcss.com',
+    './icon-180.png',
+    './icon-192.png',
+    './icon-512.png'
 ];
 
 // INSTALL Event: Cache füllen
