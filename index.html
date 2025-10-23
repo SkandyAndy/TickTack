@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeitszeit Rechner</title>
+    
+    <!-- Tailwind CSS laden -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- PWA Theme-Farbe -->
+    <meta name="theme-color" content="#4338ca">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Apple Touch Icon (für iOS) -->
+    <link rel="apple-touch-icon" href="https://placehold.co/180x180/4338ca/ffffff?text=Zeit&font=inter">
+
+    <!-- Eigenes Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white w-full max-w-md p-6 md:p-8 rounded-2xl shadow-xl space-y-6">
+        
+        <h1 class="text-3xl font-bold text-center text-indigo-800">Arbeitszeit Rechner</h1>
+
+        <!-- Eingabefelder -->
+        <div class="space-y-4">
+            <!-- Tägliche Arbeitszeit -->
+            <div>
+                <label for="targetHours" class="block text-sm font-medium text-gray-700">Tägliche Arbeitszeit</label>
+                <div class="flex items-center space-x-2 mt-1">
+                    <input type="number" id="targetHours" class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Stunden">
+                    <span class="text-gray-500">:</span>
+                    <input type="number" id="targetMinutes" class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Minuten">
+                </div>
+            </div>
+
+            <!-- Startzeit -->
+            <div>
+                <label for="startTime" class="block text-sm font-medium text-gray-700">Gekommen um</label>
+                <input type="time" id="startTime" class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+            </div>
+
+            <!-- Pause -->
+            <div>
+                <label for="breakMinutes" class="block text-sm font-medium text-gray-700">Pause (in Minuten)</label>
+                <input type="number" id="breakMinutes" value="30" class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+        </div>
+
+        <!-- Ergebnisse -->
+        <div class="space-y-5 pt-4">
+            <!-- Feierabend-Zeit -->
+            <div class="text-center">
+                <p class="text-lg text-gray-600">Dein Feierabend ist um:</p>
+                <p id="endTime" class="text-4xl font-extrabold text-indigo-700">--:--</p>
+            </div>
+
+            <!-- Fortschrittsbalken -->
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium text-gray-700">Fortschritt</span>
+                    <span id="progressText" class="text-sm font-medium text-indigo-700">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4 shadow-inner">
+                    <div id="progressBar" class="bg-indigo-600 h-4 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Status-Meldung (Restzeit / Überzeit) -->
+            <div class="text-center h-12 flex items-center justify-center">
+                <p id="statusMessage" class="text-lg font-medium text-gray-800">Bitte Startzeit eingeben.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- App-Logik laden -->
+    <script src="app.js" defer></script>
+</body>
+</html>
+

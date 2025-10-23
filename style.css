@@ -1,0 +1,7 @@
+/* Zusätzliches Styling für einen sanfteren Ladeeffekt */
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to bottom right, #478dcfb0, #170d70d8);
+}
